@@ -1,0 +1,20 @@
+#include <WiFi.h>
+
+char ssid[] = "Network-1";          //  your network SSID (name) 
+uint16_t TC_High_Temp_Set_point = 120;
+uint16_t TC_Low_Temp_Set_point = 100;
+IPAddress ip = (192, 168, 7, 7);
+
+WiFiServer server(80);
+
+void setup ()
+{
+  Serial.begin(115200);
+  
+  //WiFi.config(ip);
+  WiFi.softAP(ssid);  
+  server.begin();
+}
+
+void loop ()
+{}
